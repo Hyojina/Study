@@ -1,9 +1,21 @@
-// const형 배열은 배열내 존재하는 값들을 수정할 수 있고 제거도 가능하다.
-// 이유는 상수 배열은 값 자체를 접근하는 것이 아닌 참조값으로 접근하고 있기 때문.
-const daysOfWeek = ["mon", "tue", "wed", "thu", "fri", "sat"]; //array
+// 하나의 개체, 즉 player에 대한 설명을 하고싶다면 objects를 만드는 것이 좋다.
 
-// Get item from array
-console.log(daysOfWeek);
+// 변수로 선언하는 것이 적합하지 않은 이유는 모든 변수의 이름을 다 기억할 수 없다.
+const playerNameX = "Hyojin";
+const playerPointsX = 121212;
+const playerBeautyX = true;
 
-// Add one more day to the array
-daysOfWeek.push("sun");
+// array가 적합하지 않은 이유는 배열값이 어떤 의미인지 알 수 없기 때문
+const playerX = ["Hyojin", 121212, true];
+
+
+const player ={
+    // property 특성 적기
+    name: "Hyojin",
+    points: 100,
+    fat: false,
+};
+
+console.log(player);
+console.log(player.name);
+console.log(player["name"]); //위와 동일함
