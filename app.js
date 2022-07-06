@@ -1,9 +1,9 @@
-function plus(firstNumber, secondNumber) {
-  console.log(firstNumber + secondNumber);
-}
-function devide(a, b) {
-  console.log(a / b);
-}
+const player = {
+  name: "Hyojin",
+  sayHello: function (otherPersonsName) {
+    console.log("Hello! " + otherPersonsName + " nice to meet you!");
+  },
+};
 
-plus(1, 2);
-devide(8, 2);
+console.log(player.name);
+player.sayHello("Jinhyo");
