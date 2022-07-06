@@ -1,19 +1,24 @@
 const calculator = {
   add: function (a, b) {
-    console.log(a + b);
+    return a + b;
   },
   minus: function (a, b) {
-    console.log(a - b);
+    return a - b;
   },
   devide: function (a, b) {
-    console.log(a / b);
+    return a / b;
   },
   squared: function (a, b) {
-    console.log(a ** b);
+    return a ** b;
   },
 };
 
-calculator.add(7, 6);
-calculator.minus(10, 4);
-calculator.devide(8, 2);
-calculator.squared(5, 3);
+const addResult = calculator.add(7, 6);
+const minusResult = calculator.minus(addResult, 4);
+const devideResult = calculator.devide(8, minusResult);
+const squaredResult = calculator.squared(addResult, devideResult);
+
+console.log(addResult);
+console.log(minusResult);
+console.log(devideResult);
+console.log(squaredResult);
