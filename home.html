@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
+  <html>
     <title>Home - My first website</title>
   </head>
   <body>
     <form>
-      <input type="file" accept=".pdf,.txt,image/*"/>
-      <input required placeholder="First Name" type="text"/> 
-      <input required placeholder="Last Name" type="text"/> 
-      <input required placeholder="Username" disabled type="text"/> 
-      <input required placeholder="Password" minlength="10" type="password"/> 
+     <label for="profile">Profile Photo</label> 
+      <input id="profile" type="file" accept=".pdf,.txt,image/*"/>
+      
+      <label for="website">website</label>
+      <input id="website" required placeholder="First Name" type="url"/> 
+       
       <input type="submit" value="Create Account" />
     </form>
   </body>
+  </html>
 </html>
