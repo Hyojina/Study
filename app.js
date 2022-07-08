@@ -1,15 +1,14 @@
 const h1 = document.querySelector("div.hello:first-child h1");
 
 function handleTitleClick() {
-  const currentColor = h1.style.color;
-  let newColor;
-  if (currentColor === "plum") {
-    newColor = "tomato";
+  const clickedClass = "clicked sexy-font";
+  if (h1.className === clickedClass) {
+    h1.className = "";
   } else {
-    newColor = "plum";
+    h1.className = clickedClass;
   }
-  h1.style.color = newColor;
-  console.log(currentColor);
+  // element에서 calss name을 변경하고 제거하고 추가하는 방법을 배웠다.
+  // 그러나, 문제! class의 초기값을 잃게됨..
 }
 
 h1.addEventListener("click", handleTitleClick);
