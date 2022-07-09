@@ -3,6 +3,10 @@
   <head>
     <title>Home - My first website</title>
     <style>
+      * {
+        padding: 19px;
+        border: 2px dashed black;
+      }
       html {
         background-color: tomato;
       }
@@ -12,7 +16,7 @@
         background-color: navy;
       }
       div {
-        padding: 10px;
+        padding: 20px;
       }
       #first {
         background-color: whitesmoke;
@@ -29,19 +33,15 @@
         height: 50px;
         width: 50px;
       }
-      #fourth {
-        background-color: palevioletred;
-        height: 25px;
-        width: 25px;
+      span {
+        border-style: solid;
       }
     </style>
   </head>
   <body>
     <div id="first">
       <div id="second">
-        <div id="third">
-          <div id="fourth"></div>
-        </div>
+        <div id="third"><span>Hello</span></div>
       </div>
     </div>
   </body>
