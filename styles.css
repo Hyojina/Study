@@ -1,3 +1,42 @@
-h1 {
-  color: violet;
+html {
+  background-color: tomato;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  border-width: 3px;
+}
+
+.big {
+  background-color: moccasin;
+  border-style: solid;
+  border-color: black;
+  width: 300px;
+  height: 300px;
+}
+
+.medium {
+  width: 240px;
+  border-style: dashed;
+}
+
+.small {
+  width: 60px;
+  border-style: solid;
+}
+
+.mediumXsmall {
+  height: 60px;
+  background-color: teal;
+  border-color: white;
 }
