@@ -8,21 +8,29 @@
         margin: 50px;
       }
       span {
-        background-color: tomato;
+        background-color: yellowgreen;
+        padding: 5px;
+        border-radius: 10px;
       }
-      span:nth-child(3n + 1) {
-        background-color: teal;
+      p span {
+        color: white;
       }
+      div > span:first-child {
+        text-decoration: underline;
+      }
+      p + span {
+        background-color: lightpink;
+      }
+      /* body span:first-child {
+        display: block;
+      } */
     </style>
   </head>
   <body>
-    <span>hello</span>
-    <span>hello</span>
-    <span>hello</span>
-    <span>hello</span>
-    <span>hello</span>
-    <span>hello</span>
-    <span>hello</span>
-    <span>hello</span>
+    <div>
+      <span>Hello</span>
+      <p>Life's not all gloom and despondency. <span>inside</span></p>
+      <span>Bye</span>
+    </div>
   </body>
 </html>
