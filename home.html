@@ -4,41 +4,28 @@
     <title>Hyojin Home</title>
     <style>
       body {
-        height: 1000vh;
+        height: 100vh;
         margin: 50px;
       }
-      span {
-        background-color: yellowgreen;
-        padding: 5px;
-        border-radius: 10px;
+      input {
+        border: 6px solid wheat;
       }
-      /* 자식 element 찾기 */
-      p span {
-        color: white;
+      input:required {
+        border-color: tomato;
       }
-
-      /* 바로 밑에 오는 자식 element 찾기 */
-      div > span:first-child {
-        text-decoration: underline;
-      }
-
-      /* 바로 다음에 오는 형제 element 찾기(한개) */
-      p + address {
-        background-color: aqua;
-      }
-
-      /* 다음에 오는 형제 element 찾기(바로 뒤에 오지 않아도 됨, 여러개OK)  */
-      p ~ span {
-        background-color: lightpink;
+      input[placeholder~="name"] {
+        background-color: aquamarine;
       }
     </style>
   </head>
   <body>
     <div>
-      <span>Hello</span>
-      <p>Life's not all gloom and despondency. <span>inside</span></p>
-      <address>Seoul, Korea</address>
-      <span>Bye</span>
+      <form>
+        <input type="text" placeholder="First name" />
+        <input type="text" placeholder="Last name" />
+        <input type="password" required placeholder="password" />
+        <input type="submit" />
+      </form>
     </div>
   </body>
 </html>
