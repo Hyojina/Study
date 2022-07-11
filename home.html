@@ -1,16 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="kr">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>repl.it</title>
+    <title>Hyojin Home</title>
+    <style>
+      body {
+        height: 100vh;
+        margin: 40px;
+        /* display: flex;
+        justify-content: space-between;
+        align-items: center; */
+      }
+      div {
+        width: 100px;
+        height: 100px;
+        color: white;
+      }
+      #green {
+        background-color: teal;
+        position: fixed;
+        opacity: 0.2;
+      }
+      #different {
+        background-color: wheat;
+      }
+    </style>
   </head>
   <body>
-    <div class="big">
-      <div class="small mediumXsmall"></div>
-      <div class="medium mediumXsmall"></div>
-      <div class="small mediumXsmall"></div>
-    </div>
+    <div id="green"></div>
+    <div id="different"></div>
   </body>
 </html>
