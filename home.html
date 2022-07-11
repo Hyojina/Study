@@ -12,24 +12,32 @@
         padding: 5px;
         border-radius: 10px;
       }
+      /* 자식 element 찾기 */
       p span {
         color: white;
       }
+
+      /* 바로 밑에 오는 자식 element 찾기 */
       div > span:first-child {
         text-decoration: underline;
       }
-      p + span {
+
+      /* 바로 다음에 오는 형제 element 찾기(한개) */
+      p + address {
+        background-color: aqua;
+      }
+
+      /* 다음에 오는 형제 element 찾기(바로 뒤에 오지 않아도 됨, 여러개OK)  */
+      p ~ span {
         background-color: lightpink;
       }
-      /* body span:first-child {
-        display: block;
-      } */
     </style>
   </head>
   <body>
     <div>
       <span>Hello</span>
       <p>Life's not all gloom and despondency. <span>inside</span></p>
+      <address>Seoul, Korea</address>
       <span>Bye</span>
     </div>
   </body>
