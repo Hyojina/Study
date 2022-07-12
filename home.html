@@ -7,21 +7,26 @@
         height: 100vh;
         margin: 50px;
       }
-      a:visited {
-        color: orchid;
+      form {
+        display: flex;
+        border: 1px solid salmon;
+        flex-direction: column;
+        padding: 20px;
       }
-      a:hover {
-        font-style: italic;
+      form:focus-within {
+        border-color: seagreen;
       }
-      a:focus {
-        color: tomato;
+      form:hover input:focus {
+        background-color: crimson;
       }
     </style>
   </head>
   <body>
     <div>
       <form>
-        <a href="https://naver.com">네이버로 갑시다!</a>
+        <input type="text" name="" id="" />
+        <input type="text" name="" id="" />
+        <input type="text" name="" id="" />
       </form>
     </div>
   </body>
