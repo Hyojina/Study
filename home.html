@@ -3,13 +3,18 @@
   <head>
     <title>Hyojin Home</title>
     <style>
+      @keyframes coinFlip {
+        from {
+          transform: rotateY(0);
+        }
+        to {
+          transform: rotateY(180deg) translateX(100px);
+        }
+      }
       img {
         border: 1px solid black;
         border-radius: 50%;
-        transition: all 3s ease-in-out;
-      }
-      img:hover {
-        transform: rotateY(360deg) translateY(60px) scale(0.5);
+        animation: coinFlip 2s ease-in-out infinite;
       }
     </style>
   </head>
