@@ -3,24 +3,18 @@
   <head>
     <title>Hyojin Home</title>
     <style>
-      a {
-        color: wheat;
-        background-color: tomato;
-        text-decoration: none;
-        padding: 3px 5px;
-        border-radius: 5px;
-        font-size: 55px;
-        transition: background-color 2s cubic-bezier(0.785, 0.135, 0.15, 0.86),
-          color 3s linear, border-radius 4s ease-in-out;
+      img {
+        border: 1px solid black;
+        border-radius: 50%;
+        transition: all 3s ease-in-out;
       }
-      a:hover {
-        border-radius: 20px;
-        color: tomato;
-        background-color: wheat;
+      img:hover {
+        transform: rotateY(360deg) translateY(60px) scale(0.5);
       }
     </style>
   </head>
   <body>
-    <a href="#">Go home</a>
+    <img src="img/logo.jpg" />
+    <span>이미지는 여기여기</span>
   </body>
 </html>
