@@ -1,8 +1,11 @@
-const h1 = document.querySelector("div.hello:first-child h1");
+const loginForm = document.getElementById("login-form");
+const loginInput = loginForm.querySelector("input");
+const loginButton = loginForm.querySelector("button");
+// const loginInput = document.querySelector("#login-form input");
+// const loginButton = document.querySelector("#login-form button");
 
-function handleTitleClick() {
-  h1.classList.toggle("clicked");
-  // 이렇게 하면 섹시폰트는 살아있다! 그리고 아주 간단한 코드!
+function onLoginBtnClick() {
+  console.log(loginInput.value);
 }
 
-h1.addEventListener("click", handleTitleClick);
+loginButton.addEventListener("click", onLoginBtnClick);
