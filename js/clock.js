@@ -1,7 +1,13 @@
 const clock = document.querySelector("h2#clock");
 
-function sayHello() {
-  console.log("hello");
+function sayInterval() {
+  console.log("interval");
 }
 
-setInterval(sayHello, 1000);
+function sayTimeout() {
+  console.log("timeout");
+}
+
+setInterval(sayInterval, 1000); //계속 실행
+
+setTimeout(sayTimeout, 1000); //한번만 실행
