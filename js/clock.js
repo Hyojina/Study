@@ -1,13 +1,9 @@
 const clock = document.querySelector("h2#clock");
 
-function sayInterval() {
-  console.log("interval");
+function getClock() {
+  const date = new Date();
+  clock.innerText = `${date.getFullYear()}년 ${date.getMonth()}월 ${date.getDate()}일 ${date.getHours()}시 ${date.getMinutes()}분 ${date.getSeconds()}초`;
 }
 
-function sayTimeout() {
-  console.log("timeout");
-}
-
-setInterval(sayInterval, 1000); //계속 실행
-
-setTimeout(sayTimeout, 1000); //한번만 실행
+getClock(); //이걸 써주면 1초를 안기다려도 처음에 보여줌!!
+setInterval(getClock, 1000);
