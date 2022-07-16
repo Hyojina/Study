@@ -1,3 +1,4 @@
+/* import 파일 순서 중요!! */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
 
 @import "reset.css";
@@ -5,6 +6,7 @@
 
 /* Components */
 @import "components/status-bar.css";
+@import "components/nav-bar.css";
 
 /* Screens */
 @import "screens/login.css";

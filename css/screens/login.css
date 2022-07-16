@@ -52,7 +52,7 @@
 
 #login-form a {
   text-align: center;
-  text-decoration: none;
+
   color: rgba(0, 0, 0, 0.8); /* color: inherit 해도 됨 */
   font-size: 16px;
 }
