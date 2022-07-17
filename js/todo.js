@@ -2,6 +2,12 @@ const toDoForm = document.getElementById("todo-form");
 const toDoInput = toDoForm.querySelector("input");
 const toDoList = document.getElementById("todo-list");
 
+const toDos = [];
+
+function saveToDos() {
+  localStorage.setItem("todos", JSON.stringify(toDos));
+}
+
 function deleteToDo(event) {
   // event에서 기본적인 정보를 찾을 수 있음
   // target은 클릭된 html element
@@ -33,7 +39,12 @@ function handleToDoSubmit(event) {
   event.preventDefault();
   const newToDo = toDoInput.value;
   toDoInput.value = "";
+  toDos.push(newToDo);
   paintToDo(newToDo);
+  saveToDos();
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
+
+//local storage안에 todo를 넣고싶지만, 텍스트로 넣지 않고 배열로 넣고싶다면!
+//JSON.stringify(~) : ~가 objects나 array나 어떤 js 코드던간에 string으로 만들어 줌
