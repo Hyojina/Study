@@ -20,10 +20,11 @@ function deleteToDo(event) {
   li.remove();
 }
 
-function paintToDo(newToDo) {
+function paintToDo(newToDoObj) {
   const li = document.createElement("li");
+  li.id = newToDoObj.id;
   const span = document.createElement("span");
-  span.innerText = newToDo;
+  span.innerText = newToDoObj.text;
 
   const button = document.createElement("button");
   button.innerText = "✔";
@@ -40,8 +41,16 @@ function handleToDoSubmit(event) {
   event.preventDefault();
   const newToDo = toDoInput.value;
   toDoInput.value = "";
-  toDos.push(newToDo);
-  paintToDo(newToDo);
+
+  //text를 push하는 게 아니라 id를 함께 주어 object로 만들고 싶다.
+  // Date 값을 아이디로 주기!
+  const newToDoObj = {
+    text: newToDo,
+    id: Date.now(),
+  };
+
+  toDos.push(newToDoObj);
+  paintToDo(newToDoObj);
   saveToDos();
 }
 
