@@ -62,5 +62,16 @@ const savedToDos = localStorage.getItem(TODOS_KEY);
 if (savedToDos) {
   const parsedToDos = JSON.parse(savedToDos);
   toDos = parsedToDos; //한개씩 넣는것이 아니기 때문에 push할 수 없다..
+
+  //forEach는 배열마다 실행되며, 각각의 item을 주며, item은 object이다.
   parsedToDos.forEach(paintToDo);
+}
+
+//array에서 삭제를 하는 것이 아니라 지우고 싶은 item을 빼고 새 array를 만든다.
+//결국 지우고 싶은 item을 제외하는 것.
+//.filter 사용
+
+function sexyFilter(item) {
+  //만약에 새 array에도 값을 유지하고싶다면,
+  //true이면 값 유지, false이면 유지못함
 }
