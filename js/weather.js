@@ -10,7 +10,10 @@ function onGeoOk(position) {
       const city = document.querySelector("#weather span:first-child");
       const weather = document.querySelector("#weather span:last-child");
       city.innerText = data.name;
-      weather.innerText = `${data.weather[0].main} / ${data.main.temp}`;
+      weather.innerText = `${data.weather[0].main} / ${data.main.temp}℃`;
+      const locationImage = document.createElement("i");
+      locationImage.className = "fa-solid fa-location-dot fa-2x";
+      document.getElementById("weather").appendChild(locationImage);
     }); //JS가 url부름
 }
 function onGeoError() {
@@ -18,5 +21,3 @@ function onGeoError() {
 }
 
 navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
-
-onGeoOk;
