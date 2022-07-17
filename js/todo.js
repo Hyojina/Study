@@ -8,16 +8,18 @@ const TODOS_KEY = "todos";
 let toDos = [];
 
 function saveToDos() {
-  localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
   //local storage안에 todo를 넣고싶지만, 텍스트로 넣지 않고 배열로 넣고싶다면!
   //JSON.stringify(~) : ~가 objects나 array나 어떤 js 코드던간에 string으로 만들어 줌
   //하지만 이것 역시 단순한 string일 뿐, 살아있는 array로 만들려면 JSON.parse(JSON.stringify(~)) 해야함
   //이는 자바스크립트에서 사용하기 위함
+  localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
 
 function deleteToDo(event) {
   const li = event.target.parentElement;
   li.remove();
+  toDos = toDos.filter((toDo) => toDo.id !== li.id);
+  saveToDos();
 }
 
 function paintToDo(newToDoObj) {
@@ -46,7 +48,7 @@ function handleToDoSubmit(event) {
   // Date 값을 아이디로 주기!
   const newToDoObj = {
     text: newToDo,
-    id: Date.now(),
+    id: String(Date.now()),
   };
 
   toDos.push(newToDoObj);
@@ -65,13 +67,4 @@ if (savedToDos) {
 
   //forEach는 배열마다 실행되며, 각각의 item을 주며, item은 object이다.
   parsedToDos.forEach(paintToDo);
-}
-
-//array에서 삭제를 하는 것이 아니라 지우고 싶은 item을 빼고 새 array를 만든다.
-//결국 지우고 싶은 item을 제외하는 것.
-//.filter 사용
-
-function sexyFilter(item) {
-  //만약에 새 array에도 값을 유지하고싶다면,
-  //true이면 값 유지, false이면 유지못함
 }
