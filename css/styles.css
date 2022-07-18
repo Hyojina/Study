@@ -4,14 +4,17 @@
 @import "reset.css";
 @import "variables.css";
 
-/* Components */
+/* Components - 재사용 가능한 css는 components로 만든다.*/
 @import "components/status-bar.css";
 @import "components/nav-bar.css";
+@import "components/screen-header.css";
 
 /* Screens */
 @import "screens/login.css";
+@import "screens/friends.css";
 
 /* 모든 스크린에 적용될 수 있는 스타일을 styles.css에 써놓는다. */
 body {
   font-family: "Open Sans ", sans-serif;
+  color: #2e363e;
 }

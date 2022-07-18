@@ -3,10 +3,10 @@
   justify-content: center; /*No Service부분이 길어서 space-between으로 하면 시간이 가운데로 안옴!*/
   padding: 10px 12px;
   font-size: 16px;
-  position: fixed;
-  top: 0px;
+  /* position: fixed; */
   width: 100%;
   box-sizing: border-box;
+  color: black;
 }
 
 .status-bar__column {
