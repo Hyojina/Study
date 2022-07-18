@@ -23,6 +23,8 @@
 /*변경 전: space-between, box-sizing:border-box, padding(좌우):20px*/
 /*변경 후: space-around, [삭제]box-sizing:border-box, [삭제]padding(좌우):20px*/
 
+/* 숫자 떴을때 위치옮기는것만! */
+/* 디자인은 badge.css에 있음 */
 .nav__notification__num {
   position: absolute;
   left: 20px;
@@ -30,11 +32,6 @@
 }
 
 .nav__notification__dot {
-  background-color: tomato;
-  width: 6px;
-  height: 6px;
-  border-radius: 15px;
-  display: flex;
   position: absolute;
   left: 30px;
   bottom: 28px;

@@ -1,0 +1,28 @@
+.find-icons {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.find_icons__icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* 내가 추가함 */
+  width: 20%;
+  text-align: center;
+}
+
+.find_icons__icon i {
+  /* 아이콘 크기를 font-size로 조절 가능 */
+  font-size: 38px;
+  height: 50px;
+}
+
+.find_icons__icon span {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  font-size: 20px;
+}

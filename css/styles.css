@@ -14,6 +14,9 @@
 /* Screens */
 @import "screens/login.css";
 @import "screens/friends.css";
+/* 참고로 chat은 components로만 이루어져서 따로 css파일이 없고 html만 있음
+ */
+@import "screens/find.css";
 
 /* 모든 스크린에 적용될 수 있는 스타일을 styles.css에 써놓는다. */
 body {
