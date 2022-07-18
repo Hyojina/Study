@@ -24,16 +24,6 @@
 /*변경 후: space-around, [삭제]box-sizing:border-box, [삭제]padding(좌우):20px*/
 
 .nav__notification__num {
-  background-color: tomato;
-  width: 26px;
-  height: 26px;
-  border-radius: 15px;
-  justify-content: center;
-  align-items: center;
-  display: flex; /*span이기 때문에 width, height 적용하려면 block으로 만들어줘야 한다.*/
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
   position: absolute;
   left: 20px;
   bottom: 15px;
