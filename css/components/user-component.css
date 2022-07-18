@@ -1,7 +1,8 @@
 .user-component {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  margin: 12px 0px;
+  padding: 10px 0px;
 }
 
 /* 프로필사진, 이름 */
@@ -34,19 +35,27 @@
   border-radius: 46px;
   margin-right: 26px;
 }
-.user-component__title--xl {
+.user-component__title--bold {
   font-size: 24px;
   font-weight: bold;
 }
 
-/* 대짜리 만들기 */
+/* 소짜리 만들기 */
 .user-component__avatar--xs {
   width: 80px;
   height: 80px;
   border-radius: 34px;
   margin-right: 22px;
 }
-.user-component__title--xs {
+.user-component__title--not-bold {
   font-size: 20px;
   font-weight: normal;
+}
+
+.user-component__column:last-child {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.user-component__column i {
+  margin-left: 5px;
 }
