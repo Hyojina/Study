@@ -1,0 +1,27 @@
+.user-component {
+  display: flex;
+  align-items: center;
+}
+
+/* 프로필사진, 이름 */
+.user-component__column:first-child {
+  display: flex;
+  align-items: center;
+}
+
+/* 프로필 사진 크기가 대, 중, 소 있음! 일단 중을 만든다. */
+.user-component__avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 42px;
+  margin-right: 24px;
+}
+.user-component__title {
+  font-size: 22px;
+  font-weight: bold;
+}
+.user-component__subtitle {
+  margin-top: 18px;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 18px;
+}
