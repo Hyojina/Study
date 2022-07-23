@@ -6,26 +6,16 @@ const ctx = canvas.getContext("2d");
 canvas.width = 800;
 canvas.height = 800;
 
-//x좌표,y좌표,가로길이,세로길이
-//fillRect는 단축함수임
-ctx.fillRect(50, 50, 100, 200);
-ctx.strokeRect(200, 50, 100, 200);
+//(선을 긋지 않으면서)페인팅 브러쉬의 위치를 옮기고
+ctx.moveTo(100, 100);
 
-//1.실제로 해야하는건 선을 먼저 그리고
-//2.포인트 A부터 포인트 B까지 선택하고
-//3.그걸 fill 할지, stroke할지 정해야함
+//내가 현재 있는곳으로부터 옮길 곳까지(선을 그려준다)
+//중간중간 작동하는지 보려면 stroke 함수를 호출하여 확인 가능
+ctx.lineTo(200, 100);
+ctx.lineTo(200, 200);
+ctx.lineTo(100, 200);
+ctx.lineTo(100, 100);
 
-ctx.rect(400, 50, 100, 100);
-ctx.rect(500, 150, 100, 100);
-ctx.fill(); //마지막으로 fill을 해야 정사각형이 나타난다.
-
-//경로가 같으면 모든 사각형이 pink가 됨
-//이전 경로와 분리하여 새 경로를 만들어준다.
-ctx.beginPath();
-ctx.rect(600, 50, 100, 100);
-ctx.fillStyle = "pink";
-
-//5초 뒤 사각형 그리기
-setTimeout(() => {
-  ctx.fill();
-}, 5000);
+//완벽히 사각형을 그리면 fill함수 호출하여 색칠 가능
+ctx.fillStyle = "gold";
+ctx.fill();
