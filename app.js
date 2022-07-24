@@ -6,18 +6,21 @@ const ctx = canvas.getContext("2d");
 canvas.width = 800;
 canvas.height = 800;
 
-//벽
-ctx.fillRect(200, 200, 50, 200);
-ctx.fillRect(400, 200, 50, 200);
+//몸통과 팔
+ctx.fillRect(235, 200, 15, 100);
+ctx.fillRect(330, 200, 15, 100);
+ctx.fillRect(260, 200, 60, 200);
 
-//문을 그려준다.
-ctx.fillRect(300, 300, 50, 100);
+//얼굴(원) 그리기
+//x좌표, y좌표, 반지름 길이, startAngle,endAngle
+//원 '○'의 동쪽부터 시계방향으로 0, 0.5*PI, 1*PI, 1.5*Pi
+ctx.arc(290, 150, 40, 0, 2 * Math.PI);
+ctx.fill();
 
-//천장
-ctx.fillRect(200, 200, 200, 20);
-
-//지붕
-ctx.moveTo(200, 200);
-ctx.lineTo(325, 100); //벽의 넓이도 생각해서 중앙까지 그린다.
-ctx.lineTo(450, 200);
+ctx.beginPath(); //색을 바꿔주려면, 새 경로가 필요한지 먼저 체크해야함
+ctx.fillStyle = "gold";
+ctx.arc(275, 140, 8, 1 * Math.PI, 2 * Math.PI);
+ctx.fill();
+ctx.beginPath();
+ctx.arc(305, 140, 8, 1 * Math.PI, 2 * Math.PI);
 ctx.fill();
