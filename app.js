@@ -6,21 +6,28 @@ const ctx = canvas.getContext("2d");
 canvas.width = 800;
 canvas.height = 800;
 
-//몸통과 팔
-ctx.fillRect(235, 200, 15, 100);
-ctx.fillRect(330, 200, 15, 100);
-ctx.fillRect(260, 200, 60, 200);
+ctx.lineWidth = 2;
 
-//얼굴(원) 그리기
-//x좌표, y좌표, 반지름 길이, startAngle,endAngle
-//원 '○'의 동쪽부터 시계방향으로 0, 0.5*PI, 1*PI, 1.5*Pi
-ctx.arc(290, 150, 40, 0, 2 * Math.PI);
-ctx.fill();
+const colors = [
+  "#cd84f1",
+  "#ffcccc",
+  "#ff4d4d",
+  "#ffaf40",
+  "#fffa65",
+  "#32ff7e",
+  "#7efff5",
+  "#18dcff",
+  "#7d5fff",
+];
 
-ctx.beginPath(); //색을 바꿔주려면, 새 경로가 필요한지 먼저 체크해야함
-ctx.fillStyle = "gold";
-ctx.arc(275, 140, 8, 1 * Math.PI, 2 * Math.PI);
-ctx.fill();
-ctx.beginPath();
-ctx.arc(305, 140, 8, 1 * Math.PI, 2 * Math.PI);
-ctx.fill();
+function onClick(event) {
+  ctx.beginPath();
+  ctx.moveTo(400, 400);
+  const color = colors[Math.floor(Math.random() * colors.length)];
+  //const color = `#${Math.floor(Math.random() * 0xffffff)}`; 랜덤컬러
+  ctx.strokeStyle = color;
+  ctx.lineTo(event.offsetX, event.offsetY);
+  ctx.stroke();
+}
+
+canvas.addEventListener("mousemove", onClick);
