@@ -1,6 +1,7 @@
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 const lineWidth = document.getElementById("line-width");
+const color = document.getElementById("color");
 
 canvas.width = 800;
 canvas.height = 800;
@@ -40,6 +41,11 @@ function onMouseUp() {
 
 function onLineWidthChange(event) {
   ctx.lineWidth = event.target.value;
+  ctx.fillStyle = event.target.value; //채우는 색상도 변경
+}
+
+function onColorChange(event) {
+  ctx.strokeStyle = event.target.value;
 }
 
 canvas.addEventListener("mousemove", onMove);
@@ -48,3 +54,4 @@ canvas.addEventListener("mouseup", onMouseUp);
 canvas.addEventListener("mouseleave", onMouseUp);
 
 lineWidth.addEventListener("change", onLineWidthChange);
+color.addEventListener("change", onColorChange);
