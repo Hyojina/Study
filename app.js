@@ -10,6 +10,7 @@ const color = document.getElementById("color");
 const modeBtn = document.getElementById("mode-btn");
 const destroyBtn = document.getElementById("destroy-btn");
 const eraserBtn = document.getElementById("eraser-btn");
+const fileInput = document.getElementById("file");
 
 const CANVAS_WIDTH = 800;
 const CANVAS_HEIGHT = 800;
@@ -83,8 +84,19 @@ function onEraserClick() {
   modeBtn.innerText = "Fill";
 }
 
+function onFileChange(event) {
+  const file = event.target.files[0];
+  const url = URL.createObjectURL(file); //브라우저 메모리에 있는 url
+  const image = new Image(); //<img src=""/>와 동일
+  image.src = url;
+  image.onload = function () {
+    ctx.drawImage(image, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    fileInput.value = null;
+  };
+}
+
 //그리기
-canvas.addEventListener("mousemove", onMove);
+canvas.addEventListener("mousemove", onMove); //canvas.onmousemove = onMove(이것과 동일한 문장)
 canvas.addEventListener("mousedown", onMouseDown);
 canvas.addEventListener("mouseup", onMouseUp);
 canvas.addEventListener("mouseleave", onMouseUp);
@@ -105,3 +117,6 @@ destroyBtn.addEventListener("click", onDestroyClick);
 
 //지우개
 eraserBtn.addEventListener("click", onEraserClick);
+
+//이미지 파일 추가
+fileInput.addEventListener("change", onFileChange);
