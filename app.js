@@ -11,6 +11,7 @@ const modeBtn = document.getElementById("mode-btn");
 const destroyBtn = document.getElementById("destroy-btn");
 const eraserBtn = document.getElementById("eraser-btn");
 const fileInput = document.getElementById("file");
+const textInput = document.getElementById("text");
 
 const CANVAS_WIDTH = 800;
 const CANVAS_HEIGHT = 800;
@@ -95,6 +96,13 @@ function onFileChange(event) {
   };
 }
 
+function onDoubleClick(event) {
+  const text = textInput.value;
+  ctx.lineWidth = 1;
+  ctx.strokeText(text, event.offsetX, event.offsetY);
+  // console.log(event.offsetX, event.offsetY); //마우스가 클릭한 canvas 내부 좌표
+}
+
 //그리기
 canvas.addEventListener("mousemove", onMove); //canvas.onmousemove = onMove(이것과 동일한 문장)
 canvas.addEventListener("mousedown", onMouseDown);
@@ -120,3 +128,5 @@ eraserBtn.addEventListener("click", onEraserClick);
 
 //이미지 파일 추가
 fileInput.addEventListener("change", onFileChange);
+
+canvas.addEventListener("dblclick", onDoubleClick);
