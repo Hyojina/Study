@@ -19,6 +19,7 @@ const CANVAS_HEIGHT = 800;
 canvas.width = CANVAS_WIDTH;
 canvas.height = CANVAS_HEIGHT;
 ctx.lineWidth = lineWidth.value;
+ctx.lineCap = "round";
 let isPainting = false;
 let isFilling = false;
 
@@ -32,13 +33,12 @@ function onMove(event) {
   ctx.moveTo(event.offsetX, event.offsetY);
 }
 
-function onMouseDown() {
+function startPainting() {
   isPainting = true;
 }
-
-function onMouseUp() {
+function cancelPainting() {
   isPainting = false;
-  ctx.beginPath(); //선을 다 그렸으면 새 경로 만들어주기(move와 down에 들어가도 작동함)
+  ctx.beginPath();
 }
 
 function onLineWidthChange(event) {
@@ -105,9 +105,6 @@ function onDoubleClick(event) {
 
 //그리기
 canvas.addEventListener("mousemove", onMove); //canvas.onmousemove = onMove(이것과 동일한 문장)
-canvas.addEventListener("mousedown", onMouseDown);
-canvas.addEventListener("mouseup", onMouseUp);
-canvas.addEventListener("mouseleave", onMouseUp);
 canvas.addEventListener("click", onCanvasClick);
 
 //붓 사이즈
@@ -130,3 +127,7 @@ eraserBtn.addEventListener("click", onEraserClick);
 fileInput.addEventListener("change", onFileChange);
 
 canvas.addEventListener("dblclick", onDoubleClick);
+
+canvas.addEventListener("mousedown", startPainting);
+canvas.addEventListener("mouseup", cancelPainting);
+canvas.addEventListener("mouseleave", cancelPainting);
