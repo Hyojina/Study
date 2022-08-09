@@ -1,12 +1,13 @@
 import styled, { keyframes } from "styled-components";
 
-//style부분
 const Wrapper = styled.div`
   display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
 `;
 
-//그냥 CSS임. styled component와 관련 없다.
-//애니메이션이 위에 와야 하는 것을 잊지 말기!
 const rotationAnimation = keyframes`
   0%{
     transform: rotate(0deg);
@@ -22,6 +23,10 @@ const rotationAnimation = keyframes`
   }
 `;
 
+const Emoji = styled.span`
+  font-size: 40px;
+`;
+
 const Box = styled.div`
   width: 200px;
   height: 200px;
@@ -30,25 +35,23 @@ const Box = styled.div`
   justify-content: center;
   align-items: center;
   animation: ${rotationAnimation} 1s linear infinite;
-  span {
-    font-size: 40px;
+  ${Emoji} {
     &:hover {
-      //&는 span을 호명하는 단축키
       font-size: 60px;
     }
     &:active {
-      opacity: 0.1;
+      opacity: 0;
     }
   }
 `;
 
-//구현부분
 function App() {
   return (
     <Wrapper>
       <Box>
-        <span>😊</span> {/* 이모티콘이 styled component 안에 있지 않다 */}
+        <Emoji as="p">😊</Emoji>
       </Box>
+      <Emoji>😘</Emoji>
     </Wrapper>
   );
 }
