@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meme Maker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas></canvas>
+    <input type="range" id="line-width" min="1" max="10" value="5" step="0.1" />
+    <!-- step속성을 추가하면 더 작은 단계로 볼 수 있다. -->
+    <input type="color" id="color" />
+    <div>
+      <div
+        class="color-option"
+        style="background-color: #ff4d4d"
+        data-color="#ff4d4d"
+      ></div>
+      <div
+        class="color-option"
+        style="background-color: #ffaf40"
+        data-color="#ffaf40"
+      ></div>
+      <div
+        class="color-option"
+        style="background-color: #fffa65"
+        data-color="#fffa65"
+      ></div>
+      <div
+        class="color-option"
+        style="background-color: #32ff7e"
+        data-color="#32ff7e"
+      ></div>
+      <div
+        class="color-option"
+        style="background-color: #7efff5"
+        data-color="#7efff5"
+      ></div>
+      <div
+        class="color-option"
+        style="background-color: #18dcff"
+        data-color="#18dcff"
+      ></div>
+      <div
+        class="color-option"
+        style="background-color: #7d5fff"
+        data-color="#7d5fff"
+      ></div>
+      <div
+        class="color-option"
+        style="background-color: #cd84f1"
+        data-color="#cd84f1"
+      ></div>
+      <div
+        class="color-option"
+        style="background-color: #ffcccc"
+        data-color="#ffcccc"
+      ></div>
+    </div>
+    <button id="mode-btn">Fill</button>
+    <button id="destroy-btn">Destroy</button>
+    <button id="eraser-btn">Erase</button>
+    <input type="file" accept="image/*" id="file" />
+    <input type="text" placeholder="Write and then double click" id="text" />
+    <script src="app.js"></script>
+  </body>
+</html>
+
+<!-- Live Server 확장프로그램 설치하고, Go Live켜면 index.html파일에 변경사항이 바로 반영됨 -->
