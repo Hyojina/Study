@@ -1,3 +1,1 @@
-# Kokoa Clone 2020 Update
-
-HTML & CSS are so much fun!
+# 코코아톡 클론 코딩
