@@ -1,7 +1,7 @@
 # Study
 
-### HTML,CSS
+### 1. HTML,CSS
 
-### JavaScript
+### 2. JavaScript
 
-### React-JS
+### 3. React-JS
