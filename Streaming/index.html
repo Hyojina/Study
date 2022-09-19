@@ -6,15 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      .container {
-        background-color: orange;
-      }
-      .container::after {
+      /* 공통 스타일 */
+      .clearfix::after {
         /*before는 안된다.*/
         content: "";
         display: block;
         clear: both; /*해제*/
       }
+
+      .container {
+        background-color: orange;
+      }
+
       .item {
         width: 80px;
         height: 70px;
@@ -24,7 +27,7 @@
     </style>
   </head>
   <body>
-    <div class="container">
+    <div class="container clearfix">
       <div class="item">1</div>
       <div class="item">2</div>
       <div class="item">3</div>
