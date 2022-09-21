@@ -1,5 +1,4 @@
+@import url("./box.css");
 div {
-  width: 150px;
-  height: 150px;
-  background: url("../images/logo.png");
+  background: gold;
 }
