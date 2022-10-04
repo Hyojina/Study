@@ -27,3 +27,7 @@
 
 - [초급~중급] 초격차 패키지 : 한 번에 끝내는 프론트엔드 개발<br>
   https://fastcampus.co.kr/dev_online_frontend
+
+### Streaming<br>
+
+- 실시간 스트리밍 강의
