@@ -1,5 +1,9 @@
-const fruits = ["Apple", "Banana", "Cherry"];
+// String(문자 데이터)
+// 따옴표를 사용합니다.
+const myName = "Hyojina";
+const email = "hjkim3009@gmail.com";
+const hello = `Hello ${myName}!`;
 
-console.log(fruits[0]); // Apple
-console.log(fruits[1]); // Banana
-console.log(fruits[2]); // Cherry
+console.log(myName); // Hyojina
+console.log(email); //hjkim3009@gmail.com
+console.log(hello); //Hello
