@@ -1,9 +1,15 @@
-// String(문자 데이터)
-// 따옴표를 사용합니다.
-const myName = "Hyojina";
-const email = "hjkim3009@gmail.com";
-const hello = `Hello ${myName}!`;
+import getType from "./getType";
 
-console.log(myName); // Hyojina
-console.log(email); //hjkim3009@gmail.com
-console.log(hello); //Hello
+console.log(typeof "Hello World!"); //string
+console.log(typeof 123); //number
+console.log(typeof true); //boolean
+console.log(typeof undefined); //undefined
+console.log(typeof null); //object
+console.log(typeof {}); //object
+console.log(typeof []); //object
+
+console.log(getType(123)); //Number
+console.log(getType(false)); //False
+console.log(getType(null)); //Null
+console.log(getType({})); //Object
+console.log(getType([])); //Array
