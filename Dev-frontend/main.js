@@ -1,16 +1,11 @@
-import random from "./getRandom";
+// 반복문 (For statement)
 
-// 조건문 (Switch statement)
+const ulEl = document.querySelector("ul");
 
-const a = random();
+console.log(ulEl);
 
-switch (a) {
-  case 0:
-    console.log("a is 0");
-    break;
-  case 2:
-    console.log("a is 2");
-    break;
-  default:
-    console.log("rest...");
+for (let i = 0; i < 3; i += 1) {
+  const li = document.createElement("li");
+  li.textContent = `list-${i + 1}`;
+  ulEl.appendChild(li);
 }
