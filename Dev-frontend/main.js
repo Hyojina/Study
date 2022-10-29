@@ -1,11 +1,16 @@
-// 반복문 (For statement)
+// 형 변환(Type conversion)
 
-const ulEl = document.querySelector("ul");
+// Truthy(참 같은 값)
+// true, {}, [], 1, 2, "false", -12, "3.14" ...
 
-console.log(ulEl);
+// Falsy(거짓 같은 값)
+// flase, "", null, undefined, 0, -0, NaN
 
-for (let i = 0; i < 3; i += 1) {
-  const li = document.createElement("li");
-  li.textContent = `list-${i + 1}`;
-  ulEl.appendChild(li);
+if (false) {
+  console.log(123); // 123 출력 안됨
+}
+
+if ("flase") {
+  //(그저 문자데이터!)
+  console.log(456); // 456 출력됨
 }
