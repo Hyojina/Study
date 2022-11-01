@@ -1,6 +1,16 @@
-function num() {
-  console.log(arguments);
-  return arguments[0] + arguments[1]; // 3
-}
+// 즉시 실행 함수
+// IIFE, Immediately-Invoked Function Expression
 
-console.log(num(1, 2));
+const a = 7;
+function double() {
+  console.log(a * 2);
+}
+double();
+
+(function () {
+  console.log(a * 2);
+})();
+
+(function () {
+  console.log(a * 2);
+})();
