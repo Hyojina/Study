@@ -1,12 +1,12 @@
-// 타이머 함수
-// setTimeout(함수, 시간): 일정 시간 후 함수 실행
-// setInterval(함수, 시간): 시간 간격마다 함수 실행
-// clearTimeout(): 설정된 Timeout 함수를 종료
-// clearInterval(): 설정된 Interval 함수를 종료
+// 콜백(Callback)
 
-const timer = setInterval(() => console.log("Hyojina!"), 1000);
+// 매개변수를 하나 추가해줍니다. callback 혹은 cb
+function timeout(cb) {
+  setTimeout(() => {
+    console.log("타이머");
+    cb(); // 매개변수로 넘어온 함수를 호출합니다.
+  }, 3000);
+}
 
-console.log(timer);
-
-const h1El = document.querySelector("h1");
-h1El.addEventListener("click", () => clearInterval(timer));
+// timout 함수에 인수를 넣는 형태입니다.
+timeout(() => console.log("타이머 끝!"));
