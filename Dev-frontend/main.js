@@ -1,12 +1,16 @@
-function User(first, last) {
-  this.firstName = first;
-  this.lastName = last;
-}
-User.prototype.getFullName = function () {
-  return `${this.firstName} ${this.lastName}`;
+const timer = {
+  name: "Hyojina",
+  timeoutArrow: function () {
+    setTimeout(() => {
+      console.log(this.name);
+    }, 2000);
+  },
+  timeoutNormal: function () {
+    setTimeout(function () {
+      console.log(this.name);
+    }, 2000);
+  },
 };
 
-const hyojina = new User("Hyojina", "Kim");
-
-console.log(hyojina);
-console.log(hyojina.getFullName());
+timer.timeoutArrow(); // Hyojina
+timer.timeoutNormal(); //
