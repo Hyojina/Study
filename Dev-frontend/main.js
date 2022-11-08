@@ -4,7 +4,7 @@ console.log("min: ", Math.min(2, 8)); // 2
 
 console.log("max: ", Math.max(2, 8)); // 8
 
-console.log("ceil: ", Math.ceil(3, 14)); // 3
+console.log("ceil: ", Math.ceil(3.14)); // 4
 
 console.log("floor: ", Math.floor(3.14)); // 3
 
