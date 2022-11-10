@@ -1,27 +1,56 @@
 const numbers = [1, 2, 3, 4];
+
 const fruits = ["Apple", "Banana", "Cherry"];
 
-console.log(numbers[1]); // 2
-console.log(fruits[2]); // Cherry
+const a = fruits.forEach(function (fruit, index) {
+  console.log(`${fruit}-${index}`);
+});
+console.log(a); // undefined
 
-console.log(numbers.length); // 4
-console.log(fruits.length); // 3
-console.log([4, 5].length); // 2
-console.log([].length); // 0, 배열이 비어있음을 나타냅니다. 자주 사용해요!
+// map으로 배열 만들기
+const b = fruits.map(function (fruit, index) {
+  return `${fruit}-${index}`;
+});
+console.log(b); // ['Apple-0', 'Banana-1', 'Cherry-2']
 
-console.log(numbers.concat(fruits)); // [1, 2, 3, 4, 'Apple', 'Banana', 'Cherry']
-console.log(numbers); // [1, 2, 3, 4]
-console.log(fruits); // ['Apple', 'Banana', 'Cherry']
+// map으로 객체 만들기
+const c = fruits.map(function (fruit, index) {
+  return {
+    id: index,
+    name: fruit,
+  };
+});
+console.log(c);
 
-console.log(
-  fruits.forEach(function (element, index, array) {
-    console.log(element, index, array);
-  })
-);
-// Apple 0 (3) ['Apple', 'Banana', 'Cherry']
-// Banana 1 (3) ['Apple', 'Banana', 'Cherry']
-// Cherry 2 (3) ['Apple', 'Banana', 'Cherry']
+const d = numbers.map((number) => number < 3);
+console.log(d); // [true, true, false, false]
 
-const arr = [5, 10, 26, 44, 70];
+const e = numbers.filter((number) => number < 3);
+console.log(e); // [1, 2]
 
-console.log(arr.find((element) => element > 10)); // 26
+const f = numbers.filter((number) => number + 100);
+console.log(f); // [1, 2]
+
+const g = numbers.includes(3);
+console.log(g); // true
+
+const h = fruits.includes("Hyojina");
+console.log(h); // false
+
+numbers.splice(2, 1);
+console.log(numbers); // [1, 2, 4]
+
+numbers.splice(1, 0, "a");
+console.log(numbers); // [1, 100, 2, 4]
+
+numbers.reverse();
+fruits.reverse();
+
+console.log(numbers); // [4, 3, 2, 1]
+console.log(fruits); // ['Cherry', 'Banana', 'Apple']
+
+numbers.push(5);
+console.log(numbers); // [4, 2, 'a', 1, 5]
+
+numbers.unshift(0);
+console.log(numbers); // [0, 4, 2, 'a', 1, 5]
