@@ -1,3 +1,5 @@
-export default function random() {
-  return Math.floor(Math.random() * 10);
-}
+export const user = {
+  name: "Hyojina",
+  age: 28,
+  emails: ["hjkim3009@gmail.com", "https://github.com/Hyojina"],
+};
