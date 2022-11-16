@@ -1,51 +1,22 @@
-function solution(nums) {
-  let answer = [0, 0, 0, 0]; // row, col, cross↘, cross↙
+function solution(nums, m) {
+  let answer = 0;
+  let left = 0;
+  let sum = 0;
+  let len = 0;
 
-  for (let i = 0; i < nums.length; i++) {
-    let row, col;
-    row = 0;
-    col = 0;
-
-    for (let j = 0; j < nums[i].length; j++) {
-      row += nums[i][j];
-      col += nums[j][i];
+  for (let right = 0; right < nums.length; right++) {
+    sum += nums[right];
+    while (sum > m) {
+      sum -= nums[left];
+      left++;
     }
-
-    answer[0] = row > answer[0] ? row : answer[0];
-    answer[1] = col > answer[1] ? col : answer[1];
-
-    answer[2] += nums[i][i];
-    answer[3] += nums[nums.length - i - 1][i];
+    len = right - left + 1;
+    if (len > answer) answer = len;
   }
 
-  return Math.max(...answer);
+  return answer;
 }
 
-console.log(
-  solution([
-    [10, 13, 10, 12, 15],
-    [12, 39, 30, 23, 11],
-    [11, 25, 50, 53, 15],
-    [19, 27, 29, 37, 27],
-    [19, 13, 30, 13, 19],
-  ])
-);
-console.log(
-  solution([
-    [17, 19, 12, 11, 15],
-    [17, 36, 30, 83, 11],
-    [19, 30, 70, 53, 75],
-    [17, 22, 67, 47, 37],
-    [15, 37, 78, 93, 59],
-  ])
-);
-console.log(
-  solution([
-    [57, 65, 22, 33, 11, 11],
-    [15, 66, 77, 34, 21, 13],
-    [55, 12, 11, 55, 11, 55],
-    [54, 33, 66, 88, 11, 22],
-    [88, 99, 12, 16, 18, 33],
-    [11, 100, 22, 68, 88, 17],
-  ])
-);
+console.log(solution([0, 150, 100, 0, 150, 0, 70, 140], 350)); // 5
+console.log(solution([100, 200, 300, 400, 500, 100], 300)); // 2
+console.log(solution([100, 50, 120, 50, 150, 0, 50, 60], 400)); // 5
