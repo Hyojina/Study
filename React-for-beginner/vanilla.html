@@ -12,6 +12,10 @@
       counter = counter + 1;
       span.innerText = `Total clicks: ${counter}`;
     }
+    function handleEnter() {
+      console.log("Mouse Enter");
+    }
+    span.addEventListener("mouseenter", handleEnter);
     button.addEventListener("click", handleClick);
   </script>
 </html>
