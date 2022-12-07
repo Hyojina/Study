@@ -17,11 +17,13 @@
 
     function App() {
       const [counter, modifier] = React.useState(10);
-
+      const onClick = () => {
+        modifier(9898989);
+      };
       return (
         <div>
           <h3>Total clicks: {counter}</h3>
-          <button>Click me</button>
+          <button onClick={onClick}>Click me</button>
         </div>
       );
     }
